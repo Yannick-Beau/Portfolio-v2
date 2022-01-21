@@ -48,7 +48,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $linkLinkedin;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $twitter;
+    private $linkTwitter;
 
     public function __construct()
     {
@@ -221,14 +221,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getTwitter(): ?string
+    public function getLinkTwitter(): ?string
     {
-        return $this->twitter;
+        return $this->linkTwitter;
     }
 
-    public function setTwitter(?string $twitter): self
+    public function setLinkTwitter(?string $linkTwitter): self
     {
-        $this->twitter = $twitter;
+        $this->linkTwitter = $linkTwitter;
 
         return $this;
     }
