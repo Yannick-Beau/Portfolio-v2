@@ -52,6 +52,7 @@ class Project
     private $createdAt;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    #[Groups('projects_get')]
     private $updatedAt;
 
     public function __construct()

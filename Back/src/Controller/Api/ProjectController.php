@@ -2,10 +2,12 @@
 
 namespace App\Controller\Api;
 
+use App\Entity\Project;
 use App\Repository\ProjectRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProjectController extends AbstractController
 {
@@ -19,5 +21,13 @@ class ProjectController extends AbstractController
             [],
             ['groups' => 'projects_get']
         );
+    }
+
+     #[Route('/api/projects/{id<\d+>}', name: 'api_projects_get_item', methods:'GET')]
+    public function getItem(Project $project): Response
+    {
+        // /!\ JSON Hijacking
+        // @see https://symfony.com/doc/current/components/http_foundation.html#creating-a-json-response
+        return $this->json($project, Response::HTTP_OK, [], ['groups' => 'projects_get']);
     }
 }
