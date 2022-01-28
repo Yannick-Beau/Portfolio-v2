@@ -22,7 +22,7 @@ class UserCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id')->hideOnForm()->hideOnIndex(),
             EmailField::new('email'),
             Field::new('password')->hideOnIndex(),
             ChoiceField::new('roles')->setChoices(['Administrateur' => 'ROLE_ADMIN'])->allowMultipleChoices(),
