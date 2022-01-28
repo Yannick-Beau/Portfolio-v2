@@ -23,7 +23,7 @@ class ProjectController extends AbstractController
         );
     }
 
-     #[Route('/api/projects/{id<\d+>}', name: 'api_projects_get_item', methods:'GET')]
+    #[Route('/api/projects/{id<\d+>}', name: 'api_projects_get_item', methods:'GET')]
     public function getItem(Project $project): Response
     {
         // /!\ JSON Hijacking
