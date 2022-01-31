@@ -1,15 +1,80 @@
 @use 'reset';
+@use 'vars';
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* =============== base =============== */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body {
+  margin: 0 0 vars.$header-height 0;
+  font-family: vars.$body-font, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: vars.$normal-font-size;
+  background-color: vars.$body-color;
+  color: vars.$text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3,h4{
+  color: vars.$title-color;
+  font-weight: vars.$font-semi-bold;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============ CSS Classes ============*/
+.section{
+  padding: 2rem 0 4rem;
+}
+
+.section__title{
+  font-size: vars.$h1-font-size;
+}
+
+.section__subtitle{
+    display: block;
+    font-size: vars.$small-font-size;
+    margin-bottom: vars.$m-3;
+}
+
+.section__title,
+.section__subtitle{
+  text-align: center;
+}
+
+/* ============ Layout ============*/
+.container{
+  max-width: 768px;
+  margin-left: vars.$m-1-5;
+  margin-right: vars.$m-1-5;
+}
+
+.grid{
+  display: grid;
+  gap: 1.5rem;
 }

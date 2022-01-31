@@ -1,4 +1,4 @@
-
+@use 'src/styles/vars';
 
 .App {
   text-align: center;
@@ -27,7 +27,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: vars.$primary;
 }
 
 @keyframes App-logo-spin {
