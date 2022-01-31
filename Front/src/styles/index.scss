@@ -67,14 +67,3 @@ img{
   text-align: center;
 }
 
-/* ============ Layout ============*/
-.container{
-  max-width: 768px;
-  margin-left: vars.$m-1-5;
-  margin-right: vars.$m-1-5;
-}
-
-.grid{
-  display: grid;
-  gap: 1.5rem;
-}
