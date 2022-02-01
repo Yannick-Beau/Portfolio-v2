@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Header.scss';
 
 function Header() {
-    const [navIsShow, setNavIsShow] = useState(false);
     const [navIsShowClassName, setNavIsShowClassName] = useState('nav__menu');
     return (
             <header className="header" id="header">
@@ -12,7 +11,6 @@ function Header() {
                     <ul 
                         className="nav__list grid" 
                         onClick={() => {
-                            setNavIsShow(false);
                             setNavIsShowClassName('nav__menu');
                         }}
                     >
@@ -46,7 +44,6 @@ function Header() {
                         className="uil uil-times nav__close" 
                         id="nav-close"
                         onClick={() => {
-                            setNavIsShow(false);
                             setNavIsShowClassName('nav__menu');
                         }}
                     ></i>
@@ -57,7 +54,6 @@ function Header() {
                             className="nav__toggle" 
                             id="nav-toggle" 
                             onClick={() => {
-                                setNavIsShow(true);
                                 setNavIsShowClassName('nav__menu show-menu');
                             }}
                         >

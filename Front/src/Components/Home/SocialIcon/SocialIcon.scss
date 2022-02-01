@@ -1,0 +1,14 @@
+@use '../../../styles/vars';
+
+.home__socials{
+    display: grid;
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+    .home__social-icon{
+        font-size: 1.25rem;
+        color: vars.$primary-color;
+        &:hover{
+            color: vars.$primary-color-alt;
+        }
+    }
+}

@@ -67,3 +67,39 @@ img{
   text-align: center;
 }
 
+.grid{
+  display: grid;
+  gap: 1.5rem;
+}
+
+.container{
+  max-width: 768px;
+  margin-left: vars.$m-1-5;
+  margin-right: vars.$m-1-5;
+}
+
+/* ===== Buttons ===== */
+.button{
+  display: inline-block;
+  background-color: vars.$primary-color;
+  color: #fff;
+  padding: 1rem;
+  border-radius: .5rem;
+  font-weight: vars.$font-medium;
+  &:hover{
+    background-color: vars.$primary-color-alt;
+  }
+}
+
+.button__icon{
+  font-size: 1.25rem;
+  margin-left: vars.$m-0-5;
+  transition: .3s;
+}
+
+.button--flex{
+  display: inline-flex;
+  align-items: center;
+}
+
+
