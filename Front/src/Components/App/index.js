@@ -1,6 +1,7 @@
 import './App.scss';
 import Header from '../Layout/Header';
 import Home from '../Home';
+import About from '../About'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <main className="main">
         <Home />
+        <About />
       </main>
     </div>
   );
