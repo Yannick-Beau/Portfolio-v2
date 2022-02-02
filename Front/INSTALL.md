@@ -189,7 +189,7 @@ Transpilation ES6/JSX -> ES5.
 
 - [`eslint`](https://github.com/eslint/eslint) - ESLint, linter / analyseur de code JS.
 - [`babel-eslint`](https://github.com/babel/babel-eslint) - Analyse le code Babel.
-- [`eslint-config-airbnb`](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) - Configuration Airbnb pour ESLint.
+<!-- - [`eslint-config-airbnb`](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) - Configuration Airbnb pour ESLint. -->
 - Plugins : 
   - [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import) - Analyse les imports de fichiers.
     - [`eslint-import-resolver-alias`](https://github.com/johvin/eslint-import-resolver-alias) - Permet de définir des alias pour les dossiers.
