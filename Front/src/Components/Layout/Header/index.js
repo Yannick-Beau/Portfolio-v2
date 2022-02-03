@@ -49,7 +49,7 @@ function Header() {
                     ></i>
                     </div>
 
-                    <div className="nav__button">
+                    <div className="nav__buttons">
                         <div
                             className="nav__toggle" 
                             id="nav-toggle" 

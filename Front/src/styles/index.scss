@@ -23,7 +23,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   font-size: vars.$normal-font-size;
-  background-color: vars.$body-color;
+  background-image: radial-gradient(circle at center center, transparent,rgb(39,35,22)),repeating-linear-gradient(135deg, rgb(39,35,22) 0px, rgb(39,35,22) 2px,transparent 2px, transparent 10px,rgb(39,35,22) 10px, rgb(39,35,22) 11px,transparent 11px, transparent 21px),repeating-linear-gradient(45deg, rgb(49,46,33) 0px, rgb(49,46,33) 4px,transparent 4px, transparent 8px),linear-gradient(90deg, rgb(39,35,22),rgb(39,35,22));;
   color: vars.$text-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
