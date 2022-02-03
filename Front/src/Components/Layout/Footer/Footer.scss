@@ -1,0 +1,60 @@
+@use '../../../styles/vars';
+
+.footer{
+  padding-top: 2rem;
+}
+
+.footer__container{
+  row-gap: 3.5rem;
+}
+
+.footer__bg{
+  background-color: vars.$primary-color-alt;
+  padding: 2rem 0 3rem;
+}
+
+.footer__title{
+  font-size: vars.$h1-font-size;
+  margin-bottom: vars.$m-0-25;
+}
+
+.footer__subtitle{
+  font-size: vars.$small-font-size;
+}
+
+.footer__content{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer__links{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  align-self: center;
+}
+
+.footer__link:hover{
+  color: vars.$primary-color-lighter;
+}
+
+.footer__socialnetworks{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.footer__socialnetwork{
+  font-size: 1.25rem;
+  margin-right: vars.$m-1-5;
+  &:hover{
+    color: vars.$primary-color-lighter;
+  }
+}
+
+.footer__title,
+.footer__subtitle,
+.footer__link,
+.footer__socialnetwork{
+  color: #fff;
+}

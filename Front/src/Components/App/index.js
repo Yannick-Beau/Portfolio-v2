@@ -5,6 +5,7 @@ import About from '../About';
 import Skills from '../Skills';
 import Projects from '../Projects';
 import Contact from '../Contact';
+import Footer from '../Layout/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 }

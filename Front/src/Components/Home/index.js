@@ -9,7 +9,7 @@ function Home() {
         <section className="home section" id="home">
             <div className="home__container container grid">
                 <div className="home__content grid">
-                    <div className="home__socials">
+                    <div className="home__socialnetworks">
                         <SocialIcon SocialLink={"https://www.linkedin.com/in/yannick-beau/"} IconClass={"uil uil-linkedin-alt"} />
                         <SocialIcon SocialLink={"https://github.com/Yannick-Beau"} IconClass={"uil uil-github-alt"} />
                     </div>
