@@ -1,0 +1,16 @@
+@use '../../styles/vars';
+
+.projects__container{
+  overflow: initial;
+  padding: 0 1.5rem;
+}
+
+.swiper-horizontal > .swiper-pagination{
+  bottom: -2.5rem;
+}
+.swiper-button-prev, .swiper-button-next{
+  color: vars.$primary-color;
+}
+.swiper-pagination-bullet-active{
+  background-color: vars.$primary-color;
+}

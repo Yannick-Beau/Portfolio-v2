@@ -17,7 +17,7 @@ function About() {
                     </p>
                     <div className="about__info">
                         <div>
-                            <span class="about__info-title">0</span>
+                            <span className="about__info-title">0</span>
                             <span className="about__info-name">Completed <br /> project</span>
                         </div>
                     </div>
