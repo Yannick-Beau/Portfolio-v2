@@ -48,6 +48,13 @@
                 color: vars.$primary-color;
             }
         }
+        .nav__item{
+          .active-link{
+            background-color: red;
+            color: vars.$primary-color !important;
+          }
+        }
+        
         .nav__icon{
             font-size: 1.2rem;
         }
