@@ -7,6 +7,7 @@
   left: 0;
   z-index: vars.$z-fixed;
   background-color: vars.$body-color;
+  height: vars.$header-height;
   
     .nav{
         max-width: 968px;
@@ -33,7 +34,7 @@
         
         
         .nav__list{
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
         .nav__link{

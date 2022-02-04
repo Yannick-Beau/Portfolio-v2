@@ -5,7 +5,6 @@
   border-radius: .5rem;
   justify-self: center;
   align-self: center;
-  margin-top: vars.$m-2-5;
 }
 
 .about__title{
@@ -13,8 +12,12 @@
   margin-bottom: vars.$m-2-5;
 }
 
+.about__subtitle{
+  margin-bottom: vars.$m-2-5;
+}
+
 .about__description{
-  text-align: center;
+  text-align: justify;
   margin-bottom: vars.$m-2-5;
 }
 

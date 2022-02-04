@@ -47,6 +47,20 @@ img{
   height: auto;
 }
 
+::-webkit-scrollbar{
+  width: .60rem;
+  background-color: vars.$scroll-bar-color;
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: vars.$scroll-thumb-color;
+  border-radius: .5rem;
+  &:hover{
+    background-color: vars.$text-color-light;
+  }
+}
+
 /* ============ CSS Classes ============*/
 .section{
   padding: 2rem 0 4rem;
@@ -103,4 +117,108 @@ img{
   align-items: center;
 }
 
+// For small devices
+@media screen and (max-width: 350px){
+  
+}
 
+// For medium devices
+@media screen and (min-width: 568px){
+  
+  .skills__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px){
+  
+  .header{
+    top: 0;
+    bottom: initial;
+  }
+
+  .header,
+  .main,
+  .footer__container{
+    padding: 0 1rem;
+  }
+  .nav{
+    height: calc(vars.$header-height) +1.5rem;
+    column-gap: 1rem;
+    .nav__icon,
+    .nav__close,
+    .nav__toggle{
+      display: none;
+    }
+    .nav__list{
+      display: flex;
+      column-gap: 2rem;
+    }
+    .nav__menu{
+      margin-left: auto;
+    }
+  }
+  
+  
+  .home__container{
+    row-gap: 5rem;
+  }
+  .home__content{
+    padding-top: 5.5rem;
+    column-gap: 2rem;
+    .home__blob{
+      width: 270px;
+    }
+  }
+
+  .about__container{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
+  .about__image{
+    width: 350px;
+  }
+
+  .projects__container{
+    .project__img{
+      width: 320px;
+    }
+  }
+
+  .footer__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer__bg{
+    padding: 3rem 0 3.5rem;
+  }
+  .footer__links{
+    flex-direction: row !important;
+    column-gap: 2rem !important;
+  }
+  .footer__socialnetworks{
+    flex-direction: row !important;
+    column-gap: 2rem !important;
+    align-items: center;  
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .home__content{
+    .home__blob{
+      width: 320px;
+    }
+  }
+  .home__socialnetworks{
+    transform:  translateX(+6rem);
+  }
+
+  .projects__container{
+    .swiper-button-prev{
+      left: -3.5rem;
+    }
+    .swiper-button-next{
+      right: -3.5rem;
+    }
+  }
+  
+}
