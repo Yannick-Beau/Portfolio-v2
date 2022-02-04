@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import './Footer.scss';
+
 
 function Footer() {
   return (
@@ -12,10 +14,20 @@ function Footer() {
           <div className="footer__content">
             <ul className="footer__links">
               <li>
-                <a href="#projects" className="footer__link">Projets</a>
+                <Link
+                  to="/projects"
+                  className="footer__link"
+                >
+                  Projets
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="footer__link">Contact</a>
+                <Link
+                  to="/contact"
+                  className="footer__link"
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
             

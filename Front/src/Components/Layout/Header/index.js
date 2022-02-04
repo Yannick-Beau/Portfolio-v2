@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from "react-router-dom";
 import './Header.scss';
 
 function Header() {
@@ -15,29 +16,54 @@ function Header() {
                         }}
                     >
                             <li className="nav__item">
-                                <a href="#home" className="nav__link">
+                                <NavLink
+                                  to="/"
+                                  className="nav__link"
+                                  activeClassName="active-link"
+                                  exact
+                                >
                                     <i className="uil uil-estate nav__icon"></i> Accueil
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav__item">
-                                <a href="#about" className="nav__link">
-                                    <i className="uil uil-user nav__icon"></i> Profil
-                                </a>
+                                <NavLink
+                                  to="/about"
+                                  className="nav__link"
+                                  activeClassName="active-link"
+                                  exact
+                                >
+                                   <i className="uil uil-user nav__icon"></i> Profil
+                                </NavLink>
                             </li>
                             <li className="nav__item">
-                                <a href="#skills" className="nav__link">
+                                <NavLink
+                                  to="/skills"
+                                  className="nav__link"
+                                  activeClassName="active-link"
+                                  exact
+                                >
                                     <i className="uil uil-file-alt nav__icon"></i> Skills
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav__item">
-                                <a href="#project" className="nav__link">
+                                <NavLink
+                                  to="/projects"
+                                  className="nav__link"
+                                  activeClassName="active-link"
+                                  exact
+                                >
                                     <i className="uil uil-scenery nav__icon"></i> Projet
-                                </a>
+                                </NavLink>
                             </li>
-                            <li className="nav__item">
-                                <a href="#contact" className="nav__link">
+                            <li className="nav__item">                               
+                                <NavLink
+                                  to="/contact"
+                                  className="nav__link"
+                                  activeClassName="active-link"
+                                  exact
+                                >
                                     <i className="uil uil-message nav__icon"></i> Contact
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
                     <i 
