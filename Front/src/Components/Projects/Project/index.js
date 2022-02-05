@@ -2,7 +2,7 @@ import './Project.scss';
 
 function Project({projectLogo, projectName, projectDescription}) {
   return (
-    <>
+    <div className="projects__content grid">
       <img src={projectLogo} alt={projectName} className="project__img"></img>
 
       <div className="project__data">
@@ -13,7 +13,7 @@ function Project({projectLogo, projectName, projectDescription}) {
           <i className="uil uil-arrow-right button__icon"></i>
         </a>
       </div>
-    </>
+    </div>
   );
 }
 

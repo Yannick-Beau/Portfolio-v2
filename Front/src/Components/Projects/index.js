@@ -21,10 +21,11 @@ function Projects() {
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper projects__container container"
+        className="mySwiper projects__container container grid"
       >
         <SwiperSlide>
           <Project 
+            
             projectLogo={projectLogo} 
             projectName={'HungryTruck'} 
             projectDescription={'Projet de fin de formation en condition professionnelle, en équipe de 3. Développement un site permettant aux foods trucks de pouvoir avoir une visibilité sur la toile. Ainsi, ces professionnels seront en mesure de partager leur position, types de mets proposés et permettre aux utilisateurs de trouver les foods trucks à proximité.'} 

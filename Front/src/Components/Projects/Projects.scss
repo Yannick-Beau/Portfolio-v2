@@ -14,3 +14,41 @@
 .swiper-pagination-bullet-active{
   background-color: vars.$primary-color;
 }
+
+// ======= Media queries ========
+@media screen and (min-width: 568px){
+  .projects{
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      .projects__container{
+        .swiper-button-prev{
+          left: -0.5rem;
+        }
+        .swiper-button-next{
+          right: -0.5rem;
+        }
+      }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .projects__container{
+    .project__img{
+      width: 320px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px){
+  
+
+  .projects__container{
+    .swiper-button-prev{
+      left: -3.5rem;
+    }
+    .swiper-button-next{
+      right: -3.5rem;
+    }
+  }
+  
+}

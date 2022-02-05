@@ -3,12 +3,14 @@
 
 /* =============== base =============== */
 *{
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
 html{
+    height: 100%;
     scroll-behavior: smooth;
 }
 
@@ -116,25 +118,35 @@ img{
   display: inline-flex;
   align-items: center;
 }
-
+// ======= Media queries ========
 // For small devices
-@media screen and (max-width: 350px){
+// @media screen and (max-width: 350px){
   
-}
+// }
 
 // For medium devices
 @media screen and (min-width: 568px){
   
-  .skills__container{
+  .skills__container,
+  .projects__content,
+  .contact__container{
     grid-template-columns: repeat(2, 1fr);
   }
+  
 }
 
 @media screen and (min-width: 768px){
-  
-  .header{
-    top: 0;
-    bottom: initial;
+  body{
+    padding-bottom: 5rem;
+  }
+
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section{
+    margin-top: calc(vars.$header-height) +1.5rem;
   }
 
   .header,
@@ -142,83 +154,6 @@ img{
   .footer__container{
     padding: 0 1rem;
   }
-  .nav{
-    height: calc(vars.$header-height) +1.5rem;
-    column-gap: 1rem;
-    .nav__icon,
-    .nav__close,
-    .nav__toggle{
-      display: none;
-    }
-    .nav__list{
-      display: flex;
-      column-gap: 2rem;
-    }
-    .nav__menu{
-      margin-left: auto;
-    }
-  }
-  
-  
-  .home__container{
-    row-gap: 5rem;
-  }
-  .home__content{
-    padding-top: 5.5rem;
-    column-gap: 2rem;
-    .home__blob{
-      width: 270px;
-    }
-  }
-
-  .about__container{
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 5rem;
-  }
-  .about__image{
-    width: 350px;
-  }
-
-  .projects__container{
-    .project__img{
-      width: 320px;
-    }
-  }
-
-  .footer__container{
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .footer__bg{
-    padding: 3rem 0 3.5rem;
-  }
-  .footer__links{
-    flex-direction: row !important;
-    column-gap: 2rem !important;
-  }
-  .footer__socialnetworks{
-    flex-direction: row !important;
-    column-gap: 2rem !important;
-    align-items: center;  
-  }
 }
 
-@media screen and (min-width: 1024px){
-  .home__content{
-    .home__blob{
-      width: 320px;
-    }
-  }
-  .home__socialnetworks{
-    transform:  translateX(+6rem);
-  }
 
-  .projects__container{
-    .swiper-button-prev{
-      left: -3.5rem;
-    }
-    .swiper-button-next{
-      right: -3.5rem;
-    }
-  }
-  
-}

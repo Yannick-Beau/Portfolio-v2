@@ -6,8 +6,8 @@ import banner from '../../assets/banner.png';
 function About() {
     return (
         <section className="about section" id="about">
-            <h2 className="about__title">A propos de moi</h2>
-            <span className="about__subtitle">Introduction</span>
+            <h2 className="section__title">A propos de moi</h2>
+            <span className="section__subtitle">Introduction</span>
 
             <div className="about__container container grid">
                 <img src={banner} alt="image de montagne avec les compétences : Analyser pour solutionner, échanger et partager, soif d'apprendre et polyvalent" className="about__img"/>
