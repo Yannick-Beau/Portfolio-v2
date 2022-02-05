@@ -1,0 +1,22 @@
+@use '../../../styles/vars';
+
+.project__img{
+  width: 265px;
+  border-radius: .5rem;
+  justify-self: center;
+  margin-bottom: vars.$m-1-5;
+}
+
+.project__title{
+  font-size: vars.$h3-font-size;
+  margin-bottom: vars.$m-0-75;
+}
+
+.project__description{
+  margin-bottom: vars.$m-0-75;
+  text-align: justify;
+}
+
+.project__button:hover .button__icon{
+  transform: translateX(.25rem);
+}

@@ -1,0 +1,116 @@
+@use '../../../styles/vars';
+
+.header{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: vars.$z-fixed;
+  background-color: vars.$body-color;
+  height: vars.$header-height;
+  
+    .nav{
+        max-width: 968px;
+        height: vars.$header-height;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .nav__logo,
+        .nav__toggle{
+            color: vars.$title-color;
+            font-weight: vars.$font-medium;
+        }
+        .nav__logo:hover{
+            color: vars.$primary-color;
+        }
+        .nav__toggle{
+            font-size: 1.1rem;
+            cursor: pointer;
+            &:hover{
+                color: vars.$primary-color;
+            }
+        }
+
+        
+        
+        .nav__list{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .nav__link{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: vars.$small-font-size;
+            color: vars.$title-color;
+            font-weight: vars.$font-medium;
+            &:hover{
+                color: vars.$primary-color;
+            }
+        }
+        .nav__item{
+          .active-link{
+            background-color: red;
+            color: vars.$primary-color !important;
+          }
+        }
+        
+        .nav__icon{
+            font-size: 1.2rem;
+        }
+        .nav__close{
+            position: absolute;
+            right: 1.3rem;
+            bottom: .5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: vars.$primary-color;
+            &:hover{
+                color: vars.$primary-color-alt;
+            }
+        }
+    }
+    .show-menu{
+        bottom: 0;
+    }
+}
+
+
+@media screen and (max-width: 767px){
+    .nav__menu{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: vars.$body-color;
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0,0,0,.15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+}
+
+// ======= Media queries ========
+@media screen and (min-width: 768px){
+  .header{
+    top: 0;
+    bottom: initial;
+  }
+  .nav{
+    height: calc(vars.$header-height) +1.5rem;
+    column-gap: 1rem;
+    .nav__icon,
+    .nav__close,
+    .nav__toggle{
+      display: none;
+    }
+    .nav__list{
+      display: flex;
+      column-gap: 2rem;
+    }
+    .nav__menu{
+      margin-left: auto;
+    }
+  }
+
+}

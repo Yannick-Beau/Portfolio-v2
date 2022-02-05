@@ -1,0 +1,19 @@
+@use '../../../../styles/vars';
+
+.subskill__title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: vars.$m-0-5;
+}
+
+.subskill__picture{
+  
+  width: 100px;
+}
+
+.subskill__name{
+  font-size: vars.$normal-font-size;
+  font-weight: vars.$font-medium;
+}

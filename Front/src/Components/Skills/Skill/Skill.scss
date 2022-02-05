@@ -1,0 +1,30 @@
+@use '../../../styles/vars';
+
+.skill__header{
+  display: flex;
+  align-items: center;
+  margin-bottom: vars.$m-2-5;
+  cursor: pointer;
+  .skill__title{
+    font-size: vars.$h3-font-size;
+  }
+  .skill__arrow{
+    margin-left: auto;
+    transition: .4s;
+  }
+  .skill__icon,
+  .skill__arrow{
+    font-size: 2rem;
+    color: vars.$primary-color;
+  }
+
+  .skill__icon{
+    margin-right: vars.$m-0-75;
+  }
+}
+
+.skill__list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: vars.$m-1;
+}

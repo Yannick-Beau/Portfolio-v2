@@ -1,0 +1,13 @@
+@use '../../styles/vars';
+
+.skills__container{
+  row-gap: 0;
+}
+
+// ======= Media queries ========
+@media screen and (min-width: 1116px){
+  .skills__container{
+    grid-template-columns: repeat(3, 4fr);
+  }
+}
+

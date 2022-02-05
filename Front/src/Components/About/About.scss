@@ -1,0 +1,61 @@
+@use '../../styles/vars';
+
+.about__img{
+  width: 400px;
+  border-radius: .5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.about__title{
+  font-size: vars.$h2-font-size;
+  margin-bottom: vars.$m-2-5;
+}
+
+.about__subtitle{
+  margin-bottom: vars.$m-2-5;
+}
+
+.about__description{
+  text-align: justify;
+  margin-bottom: vars.$m-2-5;
+}
+
+.about__info
+{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: vars.$m-2-5;
+}
+
+.about__info-title{
+  font-size: vars.$h2-font-size;
+  font-weight: vars.$font-semi-bold;
+  color: vars.$title-color;
+}
+
+.about__info-name{
+  font-size: vars.$smaller-font-size;
+}
+
+.about__info-title,
+.about__info-name{
+  display: block;
+  text-align: center;
+}
+
+.about__button{
+  display: flex;
+  justify-content: center;
+}
+
+// ======= Media queries ========
+@media screen and (min-width: 768px){
+  .about__container{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
+  .about__image{
+    width: 350px;
+  }
+}

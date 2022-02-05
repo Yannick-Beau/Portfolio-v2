@@ -1,0 +1,28 @@
+@use '../../styles/vars';
+
+.contact__container{
+  row-gap: 3rem;
+}
+
+.contact__information{
+  display: flex;
+  margin-bottom: vars.$m-2;
+}
+
+.contact__icon{
+  font-size: 2rem;
+  color: vars.$primary-color;
+  margin-right: vars.$m-0-75;
+}
+
+.contact__title{
+  font-size: vars.$h3-font-size;
+  font-weight: vars.$font-medium;
+}
+
+.contact__subtitle{
+  font-size: vars.$small-font-size;
+  color: vars.$text-color-light;
+}
+
+
