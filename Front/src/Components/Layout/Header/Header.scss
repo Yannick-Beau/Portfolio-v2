@@ -48,8 +48,7 @@
             }
         }
         .nav__item{
-          .active-link{
-            background-color: red;
+          .active{
             color: vars.$primary-color !important;
           }
         }

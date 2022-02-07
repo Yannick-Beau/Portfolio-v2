@@ -10,7 +10,7 @@ function Header() {
                 <nav className="nav container">
                     <NavLink
                       to="/"
-                      exact
+                      exact="true"
                     >
                       <img src={YLogo} alt="Yannick Beau logo" className="nav__logo" />
                     </NavLink>
@@ -25,8 +25,8 @@ function Header() {
                                 <NavLink
                                   to="/"
                                   className="nav__link"
-                                  activeClassName="active-link"
-                                  exact
+                                  activeclassname="active"
+                                  exact="true"
                                 >
                                     <i className="uil uil-estate nav__icon"></i> Accueil
                                 </NavLink>
@@ -35,8 +35,8 @@ function Header() {
                                 <NavLink
                                   to="/about"
                                   className="nav__link"
-                                  activeClassName="active-link"
-                                  exact
+                                  activeclassname="active"
+                                  exact="true"
                                 >
                                    <i className="uil uil-user nav__icon"></i> Profil
                                 </NavLink>
@@ -45,8 +45,8 @@ function Header() {
                                 <NavLink
                                   to="/skills"
                                   className="nav__link"
-                                  activeClassName="active-link"
-                                  exact
+                                  activeclassname="active"
+                                  exact="true"
                                 >
                                     <i className="uil uil-file-alt nav__icon"></i> Skills
                                 </NavLink>
@@ -55,8 +55,8 @@ function Header() {
                                 <NavLink
                                   to="/projects"
                                   className="nav__link"
-                                  activeClassName="active-link"
-                                  exact
+                                  activeclassname="active"
+                                  exact="true"
                                 >
                                     <i className="uil uil-scenery nav__icon"></i> Projet
                                 </NavLink>
@@ -65,8 +65,8 @@ function Header() {
                                 <NavLink
                                   to="/contact"
                                   className="nav__link"
-                                  activeClassName="active-link"
-                                  exact
+                                  activeclassname="active"
+                                  exact="true"
                                 >
                                     <i className="uil uil-message nav__icon"></i> Contact
                                 </NavLink>
