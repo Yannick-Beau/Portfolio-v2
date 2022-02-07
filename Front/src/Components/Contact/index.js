@@ -1,7 +1,12 @@
-import './Contact.scss';
+import { toast } from 'react-toastify';
+import React, { useState } from 'react';
 import Form from './Form';
 
+import './Contact.scss';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Contact() {
+  const [showFlash, setShowFlash] = useState(false);
   return (
     <section className="contact section" id="contact">
       <h2 className="section__title">Contact</h2>
