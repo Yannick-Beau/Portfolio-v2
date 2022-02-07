@@ -8,10 +8,8 @@ function Header() {
     return (
             <header className="header" id="header">
                 <nav className="nav container">
-                    {/* <a href="#logo" className="nav__logo">Yannick</a> */}
                     <NavLink
                       to="/"
-                      // className="nav__logo"
                       exact
                     >
                       <img src={YLogo} alt="Yannick Beau logo" className="nav__logo" />
