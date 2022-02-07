@@ -1,0 +1,48 @@
+@use '../../styles/vars';
+
+.project-detail__container{
+  margin-top: vars.$m-2;
+  .project-detail__img{
+    width: 400px;
+    border-radius: .5rem;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .project-detail__description{
+    text-align: justify;
+    margin-bottom: vars.$m-2-5;
+  }
+  .project-detail__buttons{
+    margin-left: auto;
+    margin-right: auto;
+    align-self: flex-start;
+    .project-detail__buttons .project-detail__link{
+      width: 220px;
+      height: 52px;
+    }
+
+    .project-detail__link .button__icon{
+      margin-right: vars.$m-0-5;
+    }
+
+    .project-detail__link:hover .button__icon{
+      transform: translateX(-.25rem);
+      margin-right: vars.$m-0-5;
+    }
+  }
+}
+// ======= Media queries ========
+@media screen and (min-width: 768px){
+  .project-detail__container{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+    .project-detail__image{
+      width: 350px;
+    }
+    .project-detail__technologie{
+      order: 1;
+      width: 100%;
+    }
+  }
+}

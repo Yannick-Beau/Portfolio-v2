@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import About from './Components/About';
 import Skills from './Components/Skills';
 import Projects from './Components/Projects';
+import ProjectDetail from './Components/ProjectDetail';
 import Contact from './Components/Contact';
 import NotFound from './Components/NotFound';
 import Footer from './Components/Layout/Footer';
@@ -30,8 +31,12 @@ ReactDOM.render(
           element={<Skills />}
         />
         <Route
-          path="/Projects"
+          path="/projects"
           element={<Projects />}
+        />
+        <Route
+          path="/project-detail"
+          element={<ProjectDetail />}
         />
         <Route
           path="/contact"
