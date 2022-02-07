@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import './Header.scss';
-import YLogo from '../../../assets/YB.png'
+import YLogo from '../../../assets/YB.svg'
 
 function Header() {
     const [navIsShowClassName, setNavIsShowClassName] = useState('nav__menu');
