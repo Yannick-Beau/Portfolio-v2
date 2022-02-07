@@ -14,7 +14,7 @@ function Skills() {
 
         <div>
           {/* SKill Front */}
-        <Skill skillName={'Compétence Frontend'} skillIcon={'uil uil-browser'} />
+          <Skill skillName={'Compétence Frontend'} skillIcon={'uil uil-brackets-curly'} />
         </div> 
 
         <div>

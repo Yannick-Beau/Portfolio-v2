@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Project.scss';
 
 function Project({projectLogo, projectName, projectDescription}) {
@@ -8,10 +9,17 @@ function Project({projectLogo, projectName, projectDescription}) {
       <div className="project__data">
         <h3 className="project__title">{projectName}</h3>
         <p className="project__description">{projectDescription}</p>
-        <a href="https://hungrytruck.surge.sh/" className="button button--flex button--small project__button">
+        {/* <a href="https://hungrytruck.surge.sh/" className="button button--flex button--small project__button">
           Plus de détails
           <i className="uil uil-arrow-right button__icon"></i>
-        </a>
+        </a> */}
+        <Link
+          to="/project-detail"
+          className="button button--flex button--small project__button"
+        >
+          Plus de détails
+          <i className="uil uil-arrow-right button__icon"></i>
+        </Link>
       </div>
     </div>
   );
