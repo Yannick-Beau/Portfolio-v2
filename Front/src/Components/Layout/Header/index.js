@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import './Header.scss';
+import YLogo from '../../../assets/YB.png'
 
 function Header() {
     const [navIsShowClassName, setNavIsShowClassName] = useState('nav__menu');
     return (
             <header className="header" id="header">
                 <nav className="nav container">
-                    <a href="#logo" className="nav__logo">Yannick</a>
+                    {/* <a href="#logo" className="nav__logo">Yannick</a> */}
+                    <NavLink
+                      to="/"
+                      // className="nav__logo"
+                      exact
+                    >
+                      <img src={YLogo} alt="Yannick Beau logo" className="nav__logo" />
+                    </NavLink>
                 <div className={navIsShowClassName} id="nav-menu">
                     <ul 
                         className="nav__list grid" 
