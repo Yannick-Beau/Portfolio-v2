@@ -40,3 +40,4 @@ class UserCrudController extends AbstractCrudController
     }
     
 }
+
