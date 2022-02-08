@@ -61,9 +61,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $linkTwitter;
 
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    #[Groups('users_get')]
     private $title;
 
     #[ORM\Column(type: 'text', nullable: true)]
+    #[Groups('users_get')]
     private $about;
 
     public function __construct()

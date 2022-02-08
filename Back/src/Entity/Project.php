@@ -56,9 +56,11 @@ class Project
     private $updatedAt;
 
     #[ORM\Column(type: 'boolean')]
+    #[Groups('projects_get')]
     private $status;
 
     #[ORM\Column(type: 'string', length: 50, nullable: true)]
+    #[Groups('projects_get')]
     private $slug;
 
     public function __construct()
