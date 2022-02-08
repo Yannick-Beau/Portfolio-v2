@@ -19,6 +19,8 @@ function apiReducer(state = initialState, action = {}) {
     case SAVE_ALL:
       return {
         ...state,
+        firstname: action.data.user[0].firstname,
+        lastname: action.data.user[0].lastname,
       };
     default:
       return state;
