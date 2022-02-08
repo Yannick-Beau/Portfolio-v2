@@ -6,7 +6,8 @@ import CustomAvatar from './CustomAvatar';
 import SocialIcon from './SocialIcon';
 import url from '../../data';
 
-function Home() { 
+function Home({ fetchAllAPi }) { 
+  fetchAllAPi();
     return (
         <section className="home section" id="home">
             <div className="home__container container grid">

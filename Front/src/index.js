@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './styles/index.scss';
+import store from './store';
+import { Provider } from 'react-redux';
+// Import components
 import Header from './Components/Layout/Header';
-import Home from './Components/Home';
+import Home from './containers/Home';
 import About from './Components/About';
 import Skills from './Components/Skills';
 import Projects from './Components/Projects';
@@ -13,42 +15,46 @@ import NotFound from './Components/NotFound';
 import Footer from './Components/Layout/Footer';
 import reportWebVitals from './reportWebVitals';
 
+import './styles/index.scss';
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-        <Route
-          path="/about"
-          element={<About />}
-        />
-        <Route
-          path="/skills"
-          element={<Skills />}
-        />
-        <Route
-          path="/projects"
-          element={<Projects />}
-        />
-        <Route
-          path="/project-detail"
-          element={<ProjectDetail />}
-        />
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
-        <Route
-          path="*"
-          element={<NotFound />}
-        />
-      </Routes>
-      <Footer />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/about"
+            element={<About />}
+          />
+          <Route
+            path="/skills"
+            element={<Skills />}
+          />
+          <Route
+            path="/projects"
+            element={<Projects />}
+          />
+          <Route
+            path="/project-detail"
+            element={<ProjectDetail />}
+          />
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
+        </Routes>
+        <Footer />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
