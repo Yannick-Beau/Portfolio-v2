@@ -6,21 +6,7 @@ import CustomAvatar from './CustomAvatar';
 import SocialIcon from './SocialIcon';
 import url from '../../data';
 
-function Home() {
-  const [linkedin, setLinkedin] = useState('');
-  const [gitHub, setGitHub] = useState('');
-  const [picture, setPicture] = useState('');
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastName] = useState('');
-  const [subtitle, setSubtitle] = useState('');
-  const [description, setDescription] =useState('');
-
-  useEffect(() => {
-    axios.get(`${url}api/users/1`)
-      .then((response) => {
-        console.log(response);
-      });
-  }, []); 
+function Home() { 
     return (
         <section className="home section" id="home">
             <div className="home__container container grid">
