@@ -15,15 +15,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .nav__logo,
+
+        .nav__logo{
+          width: 30px;
+        }
+
         .nav__toggle{
             color: vars.$title-color;
             font-weight: vars.$font-medium;
-        }
-        .nav__logo:hover{
-            color: vars.$primary-color;
-        }
-        .nav__toggle{
             font-size: 1.1rem;
             cursor: pointer;
             &:hover{
@@ -49,8 +48,7 @@
             }
         }
         .nav__item{
-          .active-link{
-            background-color: red;
+          .active{
             color: vars.$primary-color !important;
           }
         }

@@ -15,12 +15,12 @@ function About() {
                     <p className="about__description">
                         sections 1.10.32 et 1.10.33 de "de Finibus Bonorum et Malorum" de Cicéron sont également reproduites dans leur forme originale exacte, accompagnées des versions anglaises de la traduction de 1914 par H. Rackham.
                     </p>
-                    <div className="about__info">
+                    {/* <div className="about__info">
                         <div>
                             <span className="about__info-title">0</span>
                             <span className="about__info-name">Completed <br /> project</span>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="about__buttons">
                         <a download="" href={cv} className="button button--flex">

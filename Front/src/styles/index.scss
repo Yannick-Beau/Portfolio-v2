@@ -49,6 +49,10 @@ img{
   height: auto;
 }
 
+button{
+  border: none;
+}
+
 ::-webkit-scrollbar{
   width: .60rem;
   background-color: vars.$scroll-bar-color;
@@ -61,6 +65,10 @@ img{
   &:hover{
     background-color: vars.$text-color-light;
   }
+}
+
+#root{
+   position: relative;
 }
 
 /* ============ CSS Classes ============*/

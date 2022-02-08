@@ -16,15 +16,6 @@ $container-color: hsl(47, 29%, 16%);
 $scroll-bar-color: hsl(47, 12%, 48%);
 $scroll-thumb-color: hsl(47, 29%, 36%);
 
-/* =============== Colors Dark thme =============== */
-div.App.dark-theme{
-  $title-color: hsl(47, 8%, 95%);
-  $text-color: hsl(47, 8%, 75%);
-  $input-color: hsl(47, 29%, 16%);
-  $body-color: hsl(47, 28%, 12%);
-  $container-color: hsl(47, 29%, 16%);
-}
-
 /* =============== Font & typography =============== */
 $body-font: 'Poppins', sans-serif;
 $font-medium: 500;

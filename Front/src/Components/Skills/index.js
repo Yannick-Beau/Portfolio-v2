@@ -9,17 +9,17 @@ function Skills() {
       <div className="skills__container container grid">
         <div>
           {/* SKill back */}
-          <Skill skillName={'Compétence Backend'} skillIcon={'uil uil-server-network'} />
+          <Skill skillName={'Compétences Backend'} skillIcon={'uil uil-server-network'} />
         </div> 
 
         <div>
           {/* SKill Front */}
-          <Skill skillName={'Compétence Frontend'} skillIcon={'uil uil-brackets-curly'} />
+          <Skill skillName={'Compétences Frontend'} skillIcon={'uil uil-brackets-curly'} />
         </div> 
 
         <div>
           {/* SKill Environnement */}
-          <Skill skillName={'Compétence Diverse'} skillIcon={'uil uil-ruler'} />
+          <Skill skillName={'Compétences Diverse'} skillIcon={'uil uil-ruler'} />
         </div>
 
       </div>

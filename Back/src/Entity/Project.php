@@ -58,6 +58,9 @@ class Project
     #[ORM\Column(type: 'boolean')]
     private $status;
 
+    #[ORM\Column(type: 'string', length: 50, nullable: true)]
+    private $slug;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
@@ -198,6 +201,18 @@ class Project
     public function setStatus(bool $status): self
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

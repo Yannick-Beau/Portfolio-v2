@@ -13,17 +13,17 @@ function ProjectDetail() {
         <div className="project-detail__technologie container grid">
           <div>
             {/* SKill back */}
-            <Skill skillName={'Compétence Backend'} skillIcon={'uil uil-server-network'} />
+            <Skill skillName={'Technologies Backend'} skillIcon={'uil uil-server-network'} />
           </div>
 
           <div>
             {/* SKill Front */}
-            <Skill skillName={'Compétence Frontend'} skillIcon={'uil uil-brackets-curly'} />
+            <Skill skillName={'Technologies Frontend'} skillIcon={'uil uil-brackets-curly'} />
           </div>
 
           <div>
             {/* SKill Environnement */}
-            <Skill skillName={'Compétence Diverse'} skillIcon={'uil uil-ruler'} />
+            <Skill skillName={'Technologies Diverse'} skillIcon={'uil uil-ruler'} />
           </div>
         </div>
         <div className="project-detail__buttons grid">
