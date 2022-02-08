@@ -60,6 +60,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Groups('users_get')]
     private $linkTwitter;
 
+    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    private $title;
+
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $about;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
@@ -239,6 +245,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLinkTwitter(?string $linkTwitter): self
     {
         $this->linkTwitter = $linkTwitter;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(?string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getAbout(): ?string
+    {
+        return $this->about;
+    }
+
+    public function setAbout(?string $about): self
+    {
+        $this->about = $about;
 
         return $this;
     }
