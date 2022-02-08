@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from "react-router-dom";
 import './Home.scss';
 import CustomAvatar from './CustomAvatar';
 import SocialIcon from './SocialIcon';
+import url from '../../data';
 
 function Home() {
+  const [linkedin, setLinkedin] = useState('');
+  const [gitHub, setGitHub] = useState('');
+  const [picture, setPicture] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastName] = useState('');
+  const [subtitle, setSubtitle] = useState('');
+  const [description, setDescription] =useState('');
+
+  useEffect(() => {
+    axios.get(`${url}api/users/1`)
+      .then((response) => {
+        console.log(response);
+      });
+  }, []); 
     return (
         <section className="home section" id="home">
             <div className="home__container container grid">
@@ -28,13 +44,6 @@ function Home() {
                         </Link>
                     </div>
                 </div>
-                {/* <div className="home__scroll">
-                    <a href="#about" className="home__scroll-button button--flex">
-                        <i className="uil uil-mouse-alt home__scroll-mouse"></i>
-                        <span className="home__scroll-name">Défiler vers le bas</span>
-                        <i className="uil uil-arrow-down home__scroll-arrow"></i>
-                    </a>
-                </div> */}
             </div>
         </section>
     );
