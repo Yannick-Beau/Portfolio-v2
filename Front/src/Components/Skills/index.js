@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 
+import sortSkills from '../../functions/sortSkills';
 import Skill from './Skill';
 import './Skills.scss';
 
@@ -8,24 +9,7 @@ function Skills({ skills, fetchAllAPi }) {
   const skillsBackend = [];
   const skillsFrontend = [];
   const skillsDivers = [];
-  function sortSkills(skills) {
-    skills.map((skill) => {
-      switch(skill.type){
-        case 'back':
-          skillsBackend.push(skill);
-          break;
-        case 'front':
-          skillsFrontend.push(skill);
-          break;
-        case 'software': 
-          skillsDivers.push(skill);
-          break;
-        case 'other':
-          skillsDivers.push(skill);
-          break;
-      }
-    })
-  } 
+ 
   useEffect(() => {
     if (skills.length === 0) {
       fetchAllAPi();
@@ -33,13 +17,19 @@ function Skills({ skills, fetchAllAPi }) {
   }, []);
   useEffect(() => {
     if(skills.length > 0 && skillsBackend.length === 0 && skillsFrontend.length === 0 && skillsDivers.length === 0){
-      sortSkills(skills);
-      console.log('trie skills');
-      console.log('skillsBackend :', skillsBackend);
-      console.log('skillsFront :', skillsFrontend);
-      console.log('skillsdivers :', skillsDivers);
+      // sortSkills return an objects array, so we put our objects in our arrays
+      sortSkills(skills, 'back').map((skill) => {
+        skillsBackend.push({ ...skill });
+      });
+      sortSkills(skills, 'front').map((skill) => {
+        skillsFrontend.push({ ...skill });
+      });
+      sortSkills(skills, 'other').map((skill) => {
+        skillsDivers.push({...skill});
+      });
     }
   }, [skills]);
+  
   return (
     <section className="skills section" id="skills">
       <h2 className="section__title">Skills</h2>
