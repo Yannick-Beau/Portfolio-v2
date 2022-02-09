@@ -6,13 +6,13 @@ import { Provider } from 'react-redux';
 // Import components
 import Header from './Components/Layout/Header';
 import Home from './containers/Home';
-import About from './Components/About';
-import Skills from './Components/Skills';
-import Projects from './Components/Projects';
-import ProjectDetail from './Components/ProjectDetail';
-import Contact from './Components/Contact';
+import About from './containers/About';
+import Skills from './containers/Skills';
+import Projects from './containers/Projects';
+import ProjectDetail from './containers/ProjectDetail';
+import Contact from './containers/Contact';
 import NotFound from './Components/NotFound';
-import Footer from './Components/Layout/Footer';
+import Footer from './containers/Layout/Footer';
 import reportWebVitals from './reportWebVitals';
 
 import './styles/index.scss';

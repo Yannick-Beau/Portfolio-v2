@@ -2,7 +2,7 @@ import './CustomAvatar.scss';
 
 import photo from '../../../assets/yannick-home.png';
 
-function CustomAvatar() {
+function CustomAvatar({ picture }) {
     return (
         <svg className="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0" mask-type="alpha">
