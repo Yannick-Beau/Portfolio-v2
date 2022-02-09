@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom';
 import './Project.scss';
 
-function Project({projectLogo, projectName, projectDescription}) {
+function Project({logo, name, description, slug}) {
   return (
     <div className="projects__content grid">
-      <img src={projectLogo} alt={projectName} className="project__img"></img>
+      <img src={logo} alt={name} className="project__img"></img>
 
       <div className="project__data">
-        <h3 className="project__title">{projectName}</h3>
-        <p className="project__description">{projectDescription}</p>
+        <h3 className="project__title">{name}</h3>
+        <p className="project__description">{description}</p>
         {/* <a href="https://hungrytruck.surge.sh/" className="button button--flex button--small project__button">
           Plus de détails
           <i className="uil uil-arrow-right button__icon"></i>
         </a> */}
         <Link
-          to="/project-detail"
+          to={`/project-detail/${slug}`}
           className="button button--flex button--small project__button"
         >
           Plus de détails

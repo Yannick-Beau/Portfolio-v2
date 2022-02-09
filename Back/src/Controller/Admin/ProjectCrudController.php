@@ -27,6 +27,7 @@ class ProjectCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm()->hideOnIndex(),
             Field::new('name'),
+            Field::new('slug'),
             BooleanField::new('status'),
             UrlField::new('picture'),
             Field::new('overview'),

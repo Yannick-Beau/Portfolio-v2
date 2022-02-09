@@ -16,49 +16,51 @@ class Project
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $id;
 
     #[ORM\Column(type: 'string', length: 50)]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $name;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $picture;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $overview;
 
     #[ORM\Column(type: 'text')]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $description;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $linkUrl;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $linkGithub;
 
     #[ORM\ManyToMany(targetEntity: Skill::class, inversedBy: 'projects')]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $skills;
 
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $createdAt;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    #[Groups('projects_get')]
+    #[Groups(['projects_get', 'all_get'])]
     private $updatedAt;
 
     #[ORM\Column(type: 'boolean')]
+    #[Groups(['projects_get', 'all_get'])]
     private $status;
 
     #[ORM\Column(type: 'string', length: 50, nullable: true)]
+    #[Groups(['projects_get', 'all_get'])]
     private $slug;
 
     public function __construct()

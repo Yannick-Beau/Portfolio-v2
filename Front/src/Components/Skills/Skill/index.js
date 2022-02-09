@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './Skill.scss';
 import SubSkill from './SubSkill';
 
-function Skill({skillName, skillIcon}) {
+function Skill({skillsSorted, skillName, skillIcon}) {
   const [showSkills, setShowSkills] = useState(false);
   return (
     <div className="skill__content">
@@ -29,10 +29,9 @@ function Skill({skillName, skillIcon}) {
       {showSkills 
         &&
         <ul className="skill__list">
-          <SubSkill SubSkillName={'HTML'} SubSkillPicture={"https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/php/php-plain.svg"} />
-          <SubSkill SubSkillName={'CSS'} SubSkillPicture={"https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/php/php-plain.svg"} />
-          <SubSkill SubSkillName={'JavaScript'} SubSkillPicture={"https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/php/php-plain.svg"} />
-          <SubSkill SubSkillName={'REACT'} SubSkillPicture={"https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/php/php-plain.svg"} />
+          {skillsSorted.map((skill) => (
+            <SubSkill key={skill.name} SubSkillName={skill.name} SubSkillPicture={skill.picture} />
+          ))}
         </ul>
       }
     </div>

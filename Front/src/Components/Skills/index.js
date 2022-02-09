@@ -1,7 +1,35 @@
-import './Skills.scss';
-import Skill from './Skill'
+import React, { useEffect } from 'react';
 
-function Skills() {
+import sortSkills from '../../functions/sortSkills';
+import Skill from './Skill';
+import './Skills.scss';
+
+
+function Skills({ skills, fetchAllAPi }) {
+  const skillsBackend = [];
+  const skillsFrontend = [];
+  const skillsDivers = [];
+ 
+  useEffect(() => {
+    if (skills.length === 0) {
+      fetchAllAPi();
+    }
+  }, []);
+  useEffect(() => {
+    if(skills.length > 0 && skillsBackend.length === 0 && skillsFrontend.length === 0 && skillsDivers.length === 0){
+      // sortSkills return an objects array, so we put our objects in our arrays
+      sortSkills(skills, 'back').map((skill) => {
+        skillsBackend.push({ ...skill });
+      });
+      sortSkills(skills, 'front').map((skill) => {
+        skillsFrontend.push({ ...skill });
+      });
+      sortSkills(skills, 'other').map((skill) => {
+        skillsDivers.push({...skill});
+      });
+    }
+  }, [skills]);
+  
   return (
     <section className="skills section" id="skills">
       <h2 className="section__title">Skills</h2>
@@ -9,17 +37,17 @@ function Skills() {
       <div className="skills__container container grid">
         <div>
           {/* SKill back */}
-          <Skill skillName={'Compétences Backend'} skillIcon={'uil uil-server-network'} />
+          <Skill skillsSorted={skillsBackend} skillName={'Compétences Backend'} skillIcon={'uil uil-server-network'} />
         </div> 
 
         <div>
           {/* SKill Front */}
-          <Skill skillName={'Compétences Frontend'} skillIcon={'uil uil-brackets-curly'} />
+          <Skill skillsSorted={skillsFrontend} skillName={'Compétences Frontend'} skillIcon={'uil uil-brackets-curly'} />
         </div> 
 
         <div>
           {/* SKill Environnement */}
-          <Skill skillName={'Compétences Diverse'} skillIcon={'uil uil-ruler'} />
+          <Skill skillsSorted={skillsDivers} skillName={'Compétences Diverse'} skillIcon={'uil uil-ruler'} />
         </div>
 
       </div>
