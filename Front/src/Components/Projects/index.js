@@ -30,9 +30,10 @@ function Projects({ fetchAllAPi, projects }) {
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
             <Project
-              projectLogo={project.picture}
-              projectName={project.name}
-              projectDescription={project.overview}
+              logo={project.picture}
+              name={project.name}
+              description={project.overview}
+              slug={project.slug}
             />
           </SwiperSlide>
         ))}

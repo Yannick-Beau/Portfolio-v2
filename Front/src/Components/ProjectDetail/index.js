@@ -1,37 +1,68 @@
+import React, { useEffect } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import sortSkills from '../../functions/sortSkills';
 import './ProjectDetail.scss';
-import projectLogo from '../../assets/logo_hungrytruck.svg';
 import Skill from '../Skills/Skill';
-import { Link } from 'react-router-dom';
 
-function ProjectDetail() {
+function ProjectDetail({ fetchAllAPi, projects }) {
+  const { slug } = useParams();
+  const navigate = useNavigate();
+  const project = projects.find(project => project.slug === slug);
+  const projectSkillsBackend = [];
+  const projectSkillsFrontend = [];
+  const projectSkillsDivers = [];
+  useEffect(() => {
+    if (projects.length === 0) {
+      fetchAllAPi();
+    }
+  }, []);
+  useEffect(() => {
+    if(project === undefined){
+      return navigate('/notfound');
+    }
+    else{
+      // sortSkills return an objects array, so we put our objects in our arrays
+      sortSkills(project.skills, 'back').map((skill) => {
+        projectSkillsBackend.push({ ...skill });
+      });
+      sortSkills(project.skills, 'front').map((skill) => {
+        projectSkillsFrontend.push({ ...skill });
+      });
+      sortSkills(project.skills, 'other').map((skill) => {
+        projectSkillsDivers.push({ ...skill });
+      });
+    }
+  }, [projects]);
   return (
     <section className="project-detail section" id="project">
-      <h2 className="section__title">HungryTruck</h2>
+      <h2 className="section__title">{project.name}</h2>
       <div className="project-detail__container container grid">
-        <img src={projectLogo} alt="hungrutruck" className="project-detail__img"></img>
-        <p className="project-detail__description">Projet de fin de formation en condition professionnelle, en équipe de 3. Développement un site permettant aux foods trucks de pouvoir avoir une visibilité sur la toile. Ainsi, ces professionnels seront en mesure de partager leur position, types de mets proposés et permettre aux utilisateurs de trouver les foods trucks à proximité.</p>
+        <img src={project.picture} alt={project.name} className="project-detail__img"></img>
+        <p className="project-detail__description">{project.description}</p>
         <div className="project-detail__technologie container grid">
           <div>
             {/* SKill back */}
-            <Skill skillName={'Technologies Backend'} skillIcon={'uil uil-server-network'} />
+            <Skill skillsSorted={projectSkillsBackend} skillName={'Technologies Backend'} skillIcon={'uil uil-server-network'} />
           </div>
 
           <div>
             {/* SKill Front */}
-            <Skill skillName={'Technologies Frontend'} skillIcon={'uil uil-brackets-curly'} />
+            <Skill skillsSorted={projectSkillsFrontend} skillName={'Technologies Frontend'} skillIcon={'uil uil-brackets-curly'} />
           </div>
 
           <div>
             {/* SKill Environnement */}
-            <Skill skillName={'Technologies Diverse'} skillIcon={'uil uil-ruler'} />
+            <Skill skillsSorted={projectSkillsDivers} skillName={'Technologies Diverse'} skillIcon={'uil uil-ruler'} />
           </div>
         </div>
         <div className="project-detail__buttons grid">
+
           <a href="https://hungrytruck.surge.sh/" target="_blank" rel="noreferrer" className="project-detail__link button">
             Lien du site
-            <i class="uil uil-browser button__icon"></i>
+            <i className="uil uil-browser button__icon"></i>
           </a>
-          <a href="https://github.com/orgs/O-clock-Trinity/teams/projet-hungrytruck" target="_blank" rel="noreferrer" className="project-detail__link button">
+
+          <a href={project.linkGithub} target="_blank" rel="noreferrer" className="project-detail__link button">
             Lien GitHub
             <i className="uil uil-github-alt button__icon"></i>
           </a>

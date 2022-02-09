@@ -40,7 +40,7 @@ ReactDOM.render(
             element={<Projects />}
           />
           <Route
-            path="/project-detail"
+            path="/project-detail/:slug"
             element={<ProjectDetail />}
           />
           <Route
