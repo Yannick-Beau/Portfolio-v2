@@ -5,7 +5,6 @@ import SubSkill from './SubSkill';
 
 function Skill({skillsSorted, skillName, skillIcon}) {
   const [showSkills, setShowSkills] = useState(false);
-  console.log(skillsSorted);
   return (
     <div className="skill__content">
       <div 
