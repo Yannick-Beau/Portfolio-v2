@@ -25,7 +25,6 @@ function ProjectDetail({
     }
   });
   useEffect(() => {
-    console.log('is loading:', isLoading);
     if (projects.length === 0) {
       fetchAllAPi();
     }
