@@ -1,5 +1,6 @@
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { flashError, flashSuccess } from '../../functions/flash';
 import Form from './Form';
 
@@ -25,11 +26,11 @@ function Contact({
   useEffect(() => {
     if (showFlash === 'success') {
       flashSuccess();
-      setShowFlash(null);
+      setShowFlash('');
     }
     if (showFlash === 'error') {
       flashError();
-      setShowFlash(null);
+      setShowFlash('');
     }
   }, [showFlash]);
   return (
@@ -68,6 +69,18 @@ function Contact({
       </div>
     </section>
   );
-}
+};
+
+Contact.propTypes = {
+  showFlash: PropTypes.string.isRequired,
+  setShowFlash: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
+  fetchAllAPi: PropTypes.func.isRequired,
+  sendEmail: PropTypes.func.isRequired,
+  emailField: PropTypes.string.isRequired,
+  nameField: PropTypes.string.isRequired,
+  messageField: PropTypes.string.isRequired,
+  setFields: PropTypes.func.isRequired,
+};
 
 export default Contact;

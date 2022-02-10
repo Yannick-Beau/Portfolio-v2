@@ -8,7 +8,7 @@ const initialState = {
   navIsShowClassName: 'nav__menu',
   showLinkWebSite: false,
   isLoading: true,
-  showFlash: null,
+  showFlash: '',
 };
 
 function interfaceReducer(state = initialState, action = {}) {
