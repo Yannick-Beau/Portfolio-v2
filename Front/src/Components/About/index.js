@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-
+import PropTypes from 'prop-types';
 import './About.scss';
 import cv from '../../assets/CV_2022-01-08_Yannick_Beau.pdf';
 import banner from '../../assets/banner.png';
@@ -37,6 +37,11 @@ function About({ about, fetchAllAPi }) {
             </div>
         </section>
     );
-}
+};
+
+About.propTypes = {
+  about: PropTypes.string.isRequired,
+  fetchAllAPi: PropTypes.func.isRequired,
+};
 
 export default About;

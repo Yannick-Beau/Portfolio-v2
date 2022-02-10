@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import './Footer.scss';
-
 
 function Footer({ linkGitHub, linkLinkedin }) {
   return (
@@ -48,6 +48,11 @@ function Footer({ linkGitHub, linkLinkedin }) {
       </div>
     </footer>
   );
-}
+};
+
+Footer.propTypes = {
+  linkLinkedin: PropTypes.string.isRequired,
+  linkGitHub: PropTypes.string.isRequired,
+};
 
 export default Footer;
