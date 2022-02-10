@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
 import './Form.scss';
 
-function Form({ sendEmail }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+function Form({ 
+  sendEmail,
+  emailField,
+  nameField,
+  messageField,
+  setFields,
+}) {
   return (
     <form 
       className="contact__form grid"
@@ -20,9 +22,9 @@ function Form({ sendEmail }) {
             className="contact__input"
             type="text" 
             name="name"
-            value={name}
+            value={nameField}
             onChange={(event) => {
-              setName(event.target.value);
+              setFields(event.target.value, 'name');
             }}
             required
           />
@@ -33,9 +35,9 @@ function Form({ sendEmail }) {
             className="contact__input" 
             type="email" 
             name="email"
-            value={email}
+            value={emailField}
             onChange={(event) => {
-              setEmail(event.target.value);
+              setFields(event.target.value, 'email');
             }}
             required
           />
@@ -47,9 +49,9 @@ function Form({ sendEmail }) {
             name="message"
             cols="0" 
             rows="7"
-            value={message}
+            value={messageField}
             onChange={(event) => {
-              setMessage(event.target.value);
+              setFields(event.target.value, 'message');
             }}
             required
           />

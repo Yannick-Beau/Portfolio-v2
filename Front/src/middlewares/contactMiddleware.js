@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { SEND_EMAIL } from '../actions/contactActions';
+import { SEND_EMAIL, setFields } from '../actions/contactActions';
 import { setShowFlash } from '../actions/interfaceActions';
 
 const contactMiddlewares = (store) => (next) => (action) => {
@@ -8,9 +8,9 @@ const contactMiddlewares = (store) => (next) => (action) => {
       emailjs.sendForm('MyPortfolio', 'template_58ghjsn', action.event.target, 'user_b1iKQhv18vT3UElQ5WnW6')
         .then((response) => {
           store.dispatch(setShowFlash('success'));
-          // setName('');
-          // setEmail('');
-          // setMessage('');
+          store.dispatch(setFields('', 'name'));
+          store.dispatch(setFields('', 'email'));
+          store.dispatch(setFields('', 'message'));
         }, (error) => {
           store.dispatch(setShowFlash('error'));
         });

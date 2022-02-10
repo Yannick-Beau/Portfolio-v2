@@ -6,7 +6,17 @@ import Form from './Form';
 import './Contact.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Contact({ showFlash, setShowFlash, email, fetchAllAPi, sendEmail }) {
+function Contact({ 
+  showFlash, 
+  setShowFlash, 
+  email, 
+  fetchAllAPi, 
+  sendEmail,
+  emailField,
+  nameField,
+  messageField,
+  setFields,
+}) {
   useEffect(() => {
     if (email === '') {
       fetchAllAPi();
@@ -48,7 +58,13 @@ function Contact({ showFlash, setShowFlash, email, fetchAllAPi, sendEmail }) {
             </div>
           </div>
 
-         <Form sendEmail={sendEmail} />
+         <Form 
+          sendEmail={sendEmail}
+          emailField={emailField}
+          nameField={nameField}
+          messageField={messageField}
+          setFields={setFields} 
+        />
       </div>
     </section>
   );
