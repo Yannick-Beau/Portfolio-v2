@@ -19,6 +19,7 @@ function apiReducer(state = initialState, action = {}) {
     case SAVE_ALL:
       return {
         ...state,
+        email: action.data.user[0].email,
         firstname: action.data.user[0].firstname,
         lastname: action.data.user[0].lastname,
         picture: action.data.user[0].picture,

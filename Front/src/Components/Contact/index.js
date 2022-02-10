@@ -6,7 +6,12 @@ import Form from './Form';
 import './Contact.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Contact({ showFlash, setShowFlash }) {
+function Contact({ showFlash, setShowFlash, email, fetchAllAPi }) {
+  useEffect(() => {
+    if (email === '') {
+      fetchAllAPi();
+    }
+  }, []);
   useEffect(() => {
     if (showFlash === 'success') {
       flashSuccess();
@@ -17,7 +22,6 @@ function Contact({ showFlash, setShowFlash }) {
       setShowFlash(null);
     }
   }, [showFlash]);
-  
   return (
     <section className="contact section" id="contact">
       <ToastContainer
@@ -39,7 +43,7 @@ function Contact({ showFlash, setShowFlash }) {
                 <i className="uil uil-envelope contact__icon"></i>
                 <div>
                   <h3 className="contact__title">Email</h3>
-                  <span className="contact__subtitle">beauyannick@gmail.com</span>
+                  <span className="contact__subtitle">{email}</span>
                 </div>
             </div>
           </div>
