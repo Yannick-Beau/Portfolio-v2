@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import './Home.scss';
 import CustomAvatar from './CustomAvatar';
@@ -44,6 +45,16 @@ function Home({
             </div>
         </section>
     );
-}
+};
+
+Home.propTypes = {
+  fetchAllAPi: PropTypes.func.isRequired,
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  linkGitHub: PropTypes.string.isRequired,
+  linkLinkedin: PropTypes.string.isRequired,
+  subTitle: PropTypes.string.isRequired,
+};
 
 export default Home;
