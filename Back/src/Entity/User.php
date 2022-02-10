@@ -19,7 +19,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $email;
 
     #[ORM\Column(type: 'json')]
@@ -29,43 +29,43 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     #[ORM\Column(type: 'string', length: 10)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $firstname;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $lastname;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $picture;
 
     #[ORM\Column(type: 'text')]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $description;
 
     #[ORM\ManyToMany(targetEntity: Skill::class, inversedBy: 'users')]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $skills;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $linkGithub;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $linkLinkedin;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $linkTwitter;
 
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $title;
 
     #[ORM\Column(type: 'text', nullable: true)]
-    #[Groups('users_get')]
+    #[Groups(['users_get', 'all_get'])]
     private $about;
 
     public function __construct()

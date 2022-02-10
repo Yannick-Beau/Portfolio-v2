@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import './Footer.scss';
 
 
-function Footer() {
+function Footer({ linkGitHub, linkLinkedin }) {
   return (
     <footer className="footer">
       <div className="footer__bg">
@@ -33,12 +33,12 @@ function Footer() {
             
             <ul className="footer__socialnetworks">
               <li>
-                <a href="https://www.linkedin.com/in/yannick-beau/" target="_blank" rel="noreferrer" className="footer__socialnetwork">
+                <a href={linkLinkedin} target="_blank" rel="noreferrer" className="footer__socialnetwork">
                   <i className="uil uil-linkedin-alt"></i>
                 </a>
               </li>
               <li>
-                <a href="https://github.com/Yannick-Beau" target="_blank" rel="noreferrer" className="footer__socialnetwork">
+                <a href={linkGitHub} target="_blank" rel="noreferrer" className="footer__socialnetwork">
                   <i className="uil uil-github-alt"></i>
                 </a>
               </li>
