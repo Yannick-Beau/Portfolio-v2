@@ -1,22 +1,10 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import './Form.scss';
 
-function Form({ showFlash, setShowFlash}) {
+function Form({ sendEmail }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  function sendEmail(event) {
-    emailjs.sendForm('MyPortfolio', 'template_58ghjsn', event.target, 'user_b1iKQhv18vT3UElQ5WnW6')
-      .then((response) => {
-        setShowFlash('success');
-        setName('');
-        setEmail('');
-        setMessage('');
-      }, (error) => {
-        setShowFlash('error');
-      });
-  }
   return (
     <form 
       className="contact__form grid"
