@@ -7,7 +7,6 @@ function Form({ showFlash, setShowFlash}) {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   function sendEmail(event) {
-    event.preventDefault();
     emailjs.sendForm('MyPortfolio', 'template_58ghjsn', event.target, 'user_b1iKQhv18vT3UElQ5WnW6')
       .then((response) => {
         setShowFlash('success');
@@ -17,7 +16,6 @@ function Form({ showFlash, setShowFlash}) {
       }, (error) => {
         setShowFlash('error');
       });
-    event.target.reset();
   }
   return (
     <form 
@@ -29,7 +27,7 @@ function Form({ showFlash, setShowFlash}) {
     >
       <div className="contact__inputs grid">
         <div className="contact__content">
-          <label for="name" className="contact__label">Nom</label>
+          <label htmlFor="name" className="contact__label">Nom</label>
           <input 
             className="contact__input"
             type="text" 
@@ -42,7 +40,7 @@ function Form({ showFlash, setShowFlash}) {
           />
         </div>
         <div className="contact__content">
-          <label for="email" className="contact__label">Email</label>
+          <label htmlFor="email" className="contact__label">Email</label>
           <input 
             className="contact__input" 
             type="email" 
@@ -55,7 +53,7 @@ function Form({ showFlash, setShowFlash}) {
           />
         </div>
         <div className="contact__content">
-          <label for="message" className="contact__label">Message</label>
+          <label htmlFor="message" className="contact__label">Message</label>
           <textarea 
             className="contact__input" 
             name="message"
