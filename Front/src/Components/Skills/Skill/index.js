@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import PropTypes from 'prop-types';
 import './Skill.scss';
 import SubSkill from './SubSkill';
 
@@ -36,6 +36,18 @@ function Skill({ skillsSorted, skillName, skillIcon }) {
       }
     </div>
   );
-}
+};
+
+Skill.propTypes = {
+  skillsSorted: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  skillName: PropTypes.string.isRequired,
+  skillIcon: PropTypes.string.isRequired,
+};
 
 export default Skill;
