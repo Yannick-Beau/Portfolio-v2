@@ -1,13 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import apiMiddlewares from '../middlewares/apiMiddleware';
-import apiReducer from '../reducers/apiReducer';
+import reducers from '../reducers';
 
 const enhancer = applyMiddleware(
   apiMiddlewares,
 );
 
 const store = createStore(
-  apiReducer,
+  reducers,
   enhancer,
 );
 

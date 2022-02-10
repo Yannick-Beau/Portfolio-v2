@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Footer from '../../../Components/Layout/Footer';
 
 const mapStateToProps = state => ({
-  linkGitHub: state.linkGitHub,
-  linkLinkedin: state.linkLinkedin,
+  linkGitHub: state.api.linkGitHub,
+  linkLinkedin: state.api.linkLinkedin,
 });
 
 const mapDispatchToProps = dispatch => ({

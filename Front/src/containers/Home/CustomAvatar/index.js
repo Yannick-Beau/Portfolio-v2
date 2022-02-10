@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import CustomAvatar from '../../../Components/Home/CustomAvatar';
 
 const mapStateToProps = state => ({
-  picture: state.picture,
+  picture: state.api.picture,
 });
 
 const mapDispatchToProps = dispatch => ({

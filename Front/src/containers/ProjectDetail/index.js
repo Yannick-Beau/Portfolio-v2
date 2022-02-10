@@ -4,7 +4,7 @@ import { fetchAll } from '../../actions/apiActions';
 import ProjectDetail from '../../Components/ProjectDetail';
 
 const mapStateToProps = state => ({
-  projects: state.projects,
+  projects: state.api.projects,
 });
 
 const mapDispatchToProps = dispatch => ({
