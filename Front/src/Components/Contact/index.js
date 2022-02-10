@@ -1,5 +1,6 @@
 import { ToastContainer, toast } from 'react-toastify';
 import React, { useState, useEffect } from 'react';
+import { flashError, flashSuccess } from '../../functions/flash';
 import Form from './Form';
 
 import './Contact.scss';
@@ -7,29 +8,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Contact() {
   const [showFlash, setShowFlash] = useState(null);
-  function flashError() {
-    toast.error('Une erreur est survenue. Avez-vous rempli l\'ensemble des champs obligatoires', {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  }
-  function flashSuccess() {
-    toast.success('Votre message a été envoyé avec succès', {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'colored',
-    });
-  }
   useEffect(() => {
     if (showFlash === 'success') {
       flashSuccess();
