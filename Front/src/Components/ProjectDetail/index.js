@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import sortSkills from '../../functions/sortSkills';
 import './ProjectDetail.scss';
@@ -108,6 +109,33 @@ function ProjectDetail({
       
     </section>
   );
-}
+};
+
+ProjectDetail.propTypes = {
+  fetchAllAPi: PropTypes.func.isRequired,
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      overview: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      linkUrl: PropTypes.string,
+      linkGithub: PropTypes.string.isRequired,
+      skills: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          picture: PropTypes.string.isRequired,
+          type: PropTypes.string.isRequired,
+        }).isRequired,
+      ).isRequired,
+      slug: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  showLinkWebSite: PropTypes.bool.isRequired,
+  setShowLinkWebSite: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
+};
 
 export default ProjectDetail;

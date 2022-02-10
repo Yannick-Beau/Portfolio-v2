@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
 import './Header.scss';
 import YLogo from '../../../assets/YB.svg'
@@ -94,6 +94,11 @@ function Header({ navIsShowClassName, setNavIsShowClassName }) {
                 </nav>
             </header>
     );
-}
+};
+
+Header.propTypes = {
+  navIsShowClassName: PropTypes.string.isRequired,
+  setNavIsShowClassName: PropTypes.func.isRequired,
+};
 
 export default Header;
