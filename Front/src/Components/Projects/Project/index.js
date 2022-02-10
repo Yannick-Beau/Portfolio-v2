@@ -9,10 +9,6 @@ function Project({logo, name, description, slug}) {
       <div className="project__data">
         <h3 className="project__title">{name}</h3>
         <p className="project__description">{description}</p>
-        {/* <a href="https://hungrytruck.surge.sh/" className="button button--flex button--small project__button">
-          Plus de détails
-          <i className="uil uil-arrow-right button__icon"></i>
-        </a> */}
         <Link
           to={`/project-detail/${slug}`}
           className="button button--flex button--small project__button"

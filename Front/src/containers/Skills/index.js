@@ -4,7 +4,7 @@ import { fetchAll } from '../../actions/apiActions';
 import Skills from '../../Components/Skills';
 
 const mapStateToProps = state => ({
-  skills: state.skills,
+  skills: state.api.skills,
 });
 
 const mapDispatchToProps = dispatch => ({

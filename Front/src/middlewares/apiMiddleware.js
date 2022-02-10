@@ -8,7 +8,6 @@ const apiMiddlewares = (store) => (next) => (action) => {
       axios.get(`${url}api/all`)
         .then((response) => {
           store.dispatch(saveAll(response.data));
-          console.log(response.data)
         });
       break;
     default:

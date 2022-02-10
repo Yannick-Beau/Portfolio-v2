@@ -14,7 +14,7 @@ function NotFound() {
           className="not-found__button button"
         >
           Reprendre la navigation
-          <i class="uil uil-estate button__icon"></i>
+          <i className="uil uil-estate button__icon"></i>
         </Link>
       </div>
     </section>

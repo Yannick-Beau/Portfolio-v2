@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import sortSkills from '../../functions/sortSkills';
-import Skill from './Skill';
+import Skill from '../../containers/Skills/Skill';
 import './Skills.scss';
 
 

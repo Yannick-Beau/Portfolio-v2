@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './Skill.scss';
 import SubSkill from './SubSkill';
 
-function Skill({skillsSorted, skillName, skillIcon}) {
+function Skill({ skillsSorted, skillName, skillIcon }) {
   const [showSkills, setShowSkills] = useState(false);
   return (
     <div className="skill__content">

@@ -1,24 +1,12 @@
-import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import './Form.scss';
 
-function Form({ showFlash, setShowFlash}) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  function sendEmail(event) {
-    event.preventDefault();
-    emailjs.sendForm('MyPortfolio', 'template_58ghjsn', event.target, 'user_b1iKQhv18vT3UElQ5WnW6')
-      .then((response) => {
-        setShowFlash('success');
-        setName('');
-        setEmail('');
-        setMessage('');
-      }, (error) => {
-        setShowFlash('error');
-      });
-    event.target.reset();
-  }
+function Form({ 
+  sendEmail,
+  emailField,
+  nameField,
+  messageField,
+  setFields,
+}) {
   return (
     <form 
       className="contact__form grid"
@@ -29,41 +17,41 @@ function Form({ showFlash, setShowFlash}) {
     >
       <div className="contact__inputs grid">
         <div className="contact__content">
-          <label for="name" className="contact__label">Nom</label>
+          <label htmlFor="name" className="contact__label">Nom</label>
           <input 
             className="contact__input"
             type="text" 
             name="name"
-            value={name}
+            value={nameField}
             onChange={(event) => {
-              setName(event.target.value);
+              setFields(event.target.value, 'name');
             }}
             required
           />
         </div>
         <div className="contact__content">
-          <label for="email" className="contact__label">Email</label>
+          <label htmlFor="email" className="contact__label">Email</label>
           <input 
             className="contact__input" 
             type="email" 
             name="email"
-            value={email}
+            value={emailField}
             onChange={(event) => {
-              setEmail(event.target.value);
+              setFields(event.target.value, 'email');
             }}
             required
           />
         </div>
         <div className="contact__content">
-          <label for="message" className="contact__label">Message</label>
+          <label htmlFor="message" className="contact__label">Message</label>
           <textarea 
             className="contact__input" 
             name="message"
             cols="0" 
             rows="7"
-            value={message}
+            value={messageField}
             onChange={(event) => {
-              setMessage(event.target.value);
+              setFields(event.target.value, 'message');
             }}
             required
           />
