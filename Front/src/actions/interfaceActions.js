@@ -1,6 +1,7 @@
 export const SET_NAV_IS_SHOW_CLASSNAME = 'SET_NAV_IS_SHOW_CLASSNAME';
 export const SET_SHOW_LINK_WEB_SITE = 'SET_SHOW_LINK_WEB_SITE';
 export const SET_IS_LOADING = 'SET_IS_LOADING';
+export const SET_SHOW_FLASH = 'SET_SHOW_FLASH';
 
 export const setNavIsShowClassName = (newValue) => ({
   type: SET_NAV_IS_SHOW_CLASSNAME,
@@ -14,5 +15,10 @@ export const setShowLinkWebSite = (newValue) => ({
 
 export const setIsLoading = (newValue) => ({
   type: SET_IS_LOADING,
+  data: newValue,
+});
+
+export const setShowFlash = (newValue) => ({
+  type: SET_SHOW_FLASH,
   data: newValue,
 });

@@ -1,13 +1,12 @@
 import { ToastContainer, toast } from 'react-toastify';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { flashError, flashSuccess } from '../../functions/flash';
 import Form from './Form';
 
 import './Contact.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Contact() {
-  const [showFlash, setShowFlash] = useState(null);
+function Contact({ showFlash, setShowFlash }) {
   useEffect(() => {
     if (showFlash === 'success') {
       flashSuccess();

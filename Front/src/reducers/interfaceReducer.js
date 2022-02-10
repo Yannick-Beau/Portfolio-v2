@@ -1,8 +1,14 @@
-import { SET_NAV_IS_SHOW_CLASSNAME, SET_SHOW_LINK_WEB_SITE, SET_IS_LOADING } from "../actions/interfaceActions";
+import { 
+  SET_NAV_IS_SHOW_CLASSNAME, 
+  SET_SHOW_LINK_WEB_SITE, 
+  SET_IS_LOADING,
+  SET_SHOW_FLASH,
+ } from "../actions/interfaceActions";
 const initialState = {
   navIsShowClassName: 'nav__menu',
   showLinkWebSite: false,
   isLoading: true,
+  showFlash: null,
 };
 
 function interfaceReducer(state = initialState, action = {}) {
@@ -21,6 +27,11 @@ function interfaceReducer(state = initialState, action = {}) {
       return {
         ...state,
         isLoading: action.data
+      }
+    case SET_SHOW_FLASH:
+      return {
+        ...state,
+        showFlash: action.data
       }
     default:
       return state;
