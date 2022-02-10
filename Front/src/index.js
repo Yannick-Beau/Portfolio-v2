@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import store from './store';
 import { Provider } from 'react-redux';
 // Import components
-import Header from './Components/Layout/Header';
+import Header from './containers/Layout/Header';
 import Home from './containers/Home';
 import About from './containers/About';
 import Skills from './containers/Skills';

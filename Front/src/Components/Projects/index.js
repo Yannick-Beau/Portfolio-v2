@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import './Projects.scss';
-import projectLogo from '../../assets/logo_hungrytruck.svg';
 
 function Projects({ fetchAllAPi, projects }) {
   useEffect(() => {
