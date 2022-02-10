@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-
+import PropTypes from 'prop-types';
 import sortSkills from '../../functions/sortSkills';
 import Skill from '../../containers/Skills/Skill';
 import './Skills.scss';
-
 
 function Skills({ skills, fetchAllAPi }) {
   const skillsBackend = [];
@@ -53,6 +52,17 @@ function Skills({ skills, fetchAllAPi }) {
       </div>
     </section>
   );
-}
+};
+
+Skills.propTypes = {
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+  fetchAllAPi: PropTypes.func.isRequired,
+};
 
 export default Skills;
