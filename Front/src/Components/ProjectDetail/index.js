@@ -11,14 +11,18 @@ function ProjectDetail({
   showLinkWebSite, 
   setShowLinkWebSite,
   isLoading,
-  setIsLoading, 
+  setIsLoading,
+  projectSkillsBackend,
+  projectSkillsFrontend,
+  projectSkillsDivers,
+  saveSortedSkills, 
 }) {
+  // const projectSkillsBackend = [];
+  // const projectSkillsFrontend = [];
+  // const projectSkillsDivers = [];
   const { slug } = useParams();
   const navigate = useNavigate();
   const project = projects.find(project => project.slug === slug);
-  const projectSkillsBackend = [];
-  const projectSkillsFrontend = [];
-  const projectSkillsDivers = [];
   
   useEffect(() =>{
     if (project === undefined && projects.length > 0) {
@@ -35,24 +39,30 @@ function ProjectDetail({
       setIsLoading(false);
     }
     if (project !== undefined){
+      console.log('on va tier');
+      // sortSkills return an objects array, so we put our objects in our arrays
+      // sortSkills(project.skills, 'back').map((skill) => {
+      //   projectSkillsBackend.push({ ...skill });
+      // });
+      // sortSkills(project.skills, 'front').map((skill) => {
+      //   projectSkillsFrontend.push({ ...skill });
+      // });
+      // sortSkills(project.skills, 'other').map((skill) => {
+      //   projectSkillsDivers.push({ ...skill });
+      // });
+      saveSortedSkills(sortSkills(project.skills, 'back'), 'back');
+      saveSortedSkills(sortSkills(project.skills, 'front'), 'front');
+      saveSortedSkills(sortSkills(project.skills, 'other'), 'other');
+      console.log('on a tier skills backend:', projectSkillsBackend);
       if (project.linkUrl === null) {
         setShowLinkWebSite(false);
       }
       else {
         setShowLinkWebSite(true);
       }
-      // sortSkills return an objects array, so we put our objects in our arrays
-      sortSkills(project.skills, 'back').map((skill) => {
-        projectSkillsBackend.push({ ...skill });
-      });
-      sortSkills(project.skills, 'front').map((skill) => {
-        projectSkillsFrontend.push({ ...skill });
-      });
-      sortSkills(project.skills, 'other').map((skill) => {
-        projectSkillsDivers.push({ ...skill });
-      });
     }
-  }, [project]);
+  }, [projects]);
+  console.log('on a tier skills backend 2:', projectSkillsBackend);
   return (
     <section className="project-detail section" id="project">
       {isLoading
