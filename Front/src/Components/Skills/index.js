@@ -31,7 +31,7 @@ function Skills({ skills, fetchAllAPi }) {
   
   return (
     <section className="skills section" id="skills">
-      <h2 className="section__title">Skills</h2>
+      <h1 className="section__title">Skills</h1>
       <span className="section__subtitle">Mes compétences techniques</span>
       <div className="skills__container container grid">
         <div>
