@@ -12,7 +12,7 @@ function About({ about, fetchAllAPi }) {
   }, []);
     return (
         <section className="about section" id="about">
-            <h2 className="section__title">Profil</h2>
+            <h1 className="section__title">Profil</h1>
             <span className="section__subtitle">A propos de moi</span>
 
             <div className="about__container container grid">

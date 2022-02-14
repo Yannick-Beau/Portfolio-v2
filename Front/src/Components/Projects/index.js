@@ -16,7 +16,7 @@ function Projects({ fetchAllAPi, projects }) {
   }, []);
   return (
     <section className="projects section" id="project">
-      <h2 className="section__title">Projets</h2>
+      <h1 className="section__title">Projets</h1>
       <span className="section__subtitle">Mes réalisations</span>
       <Swiper
         cssMode={true}
