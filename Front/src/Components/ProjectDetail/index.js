@@ -17,9 +17,6 @@ function ProjectDetail({
   projectSkillsDivers,
   saveSortedSkills, 
 }) {
-  // const projectSkillsBackend = [];
-  // const projectSkillsFrontend = [];
-  // const projectSkillsDivers = [];
   const { slug } = useParams();
   const navigate = useNavigate();
   const project = projects.find(project => project.slug === slug);
@@ -39,21 +36,9 @@ function ProjectDetail({
       setIsLoading(false);
     }
     if (project !== undefined){
-      console.log('on va tier');
-      // sortSkills return an objects array, so we put our objects in our arrays
-      // sortSkills(project.skills, 'back').map((skill) => {
-      //   projectSkillsBackend.push({ ...skill });
-      // });
-      // sortSkills(project.skills, 'front').map((skill) => {
-      //   projectSkillsFrontend.push({ ...skill });
-      // });
-      // sortSkills(project.skills, 'other').map((skill) => {
-      //   projectSkillsDivers.push({ ...skill });
-      // });
       saveSortedSkills(sortSkills(project.skills, 'back'), 'back');
       saveSortedSkills(sortSkills(project.skills, 'front'), 'front');
       saveSortedSkills(sortSkills(project.skills, 'other'), 'other');
-      console.log('on a tier skills backend:', projectSkillsBackend);
       if (project.linkUrl === null) {
         setShowLinkWebSite(false);
       }
@@ -62,7 +47,6 @@ function ProjectDetail({
       }
     }
   }, [projects]);
-  console.log('on a tier skills backend 2:', projectSkillsBackend);
   return (
     <section className="project-detail section" id="project">
       {isLoading
@@ -72,7 +56,7 @@ function ProjectDetail({
       {!isLoading
         &&
         <>
-          <h2 className="section__title">{project.name}</h2>
+          <h1 className="section__title">{project.name}</h1>
           <div className="project-detail__container container grid">
             <img src={project.picture} alt={project.name} className="project-detail__img"></img>
             <p className="project-detail__description">{project.description}</p>

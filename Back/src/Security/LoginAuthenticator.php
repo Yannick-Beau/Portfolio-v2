@@ -32,7 +32,7 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
     {
         return self::LOGIN_ROUTE === $request->attributes->get('_route')
             && $request->isMethod('POST');
-    } 
+    }
 
     public function authenticate(Request $request): Passport
     {
