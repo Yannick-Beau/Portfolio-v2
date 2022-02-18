@@ -17,7 +17,7 @@ function Form({
     >
       <div className="contact__inputs grid">
         <div className="contact__content">
-          <label htmlFor="name" className="contact__label">Nom</label>
+          <label htmlFor="name" className="contact__label">Nom, prénom / nom de l'entreprise</label>
           <input 
             className="contact__input"
             type="text" 
