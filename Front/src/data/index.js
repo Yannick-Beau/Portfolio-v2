@@ -1,2 +1,2 @@
-const url = 'http://185.218.124.39/back/';
+const url = 'https://beau-yannick.fr/back/';
 export default url;
