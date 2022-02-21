@@ -13,12 +13,19 @@ function Home({
   linkGitHub,
   linkLinkedin,
   subTitle,
+  isLoading,
+  setIsLoading,
  }) { 
   useEffect(() => {
     if(firstname === ''){
       fetchAllAPi();
     }
   }, []);
+  useEffect(() => {
+    if (firstname !== '') {
+      setIsLoading(false);
+    }
+  }, [firstname]);
     return (
         <section className="home section" id="home">
             <div className="home__container container grid">
@@ -31,15 +38,25 @@ function Home({
                         <CustomAvatar />
                     </div>
                     <div className="home__data">
-                        <h1 className="home__title">Bienvenu sur le portfolio de {lastname} {firstname}</h1>
-                        <h3 className="home__subtitle">{subTitle}</h3>
-                        <p className="home__description">{description}</p>
-                        <Link
-                          to="/contact"
-                          className="button button--flex"
-                        >
-                            Contacter moi <i className="uil uil-message button__icon"></i>
-                        </Link>
+                      {isLoading
+                        &&
+                        <div className="lds-dual-ring"></div>
+                      }
+                      {!isLoading
+                        &&
+                        <>
+                          <h1 className="home__title">Bienvenu sur le portfolio de {lastname} {firstname}</h1>
+                          <h3 className="home__subtitle">{subTitle}</h3>
+                          <p className="home__description">{description}</p>
+                          
+                        </>
+                      }
+                      <Link
+                        to="/contact"
+                        className="button button--flex"
+                      >
+                        Contacter moi <i className="uil uil-message button__icon"></i>
+                      </Link>
                     </div>
                 </div>
             </div>
@@ -55,6 +72,8 @@ Home.propTypes = {
   linkGitHub: PropTypes.string.isRequired,
   linkLinkedin: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
 };
 
 export default Home;

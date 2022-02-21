@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { fetchAll } from '../../actions/apiActions';
-import { setShowLinkWebSite, setIsLoading } from '../../actions/interfaceActions'
+import { setShowLinkWebSite, setIsLoading } from '../../actions/interfaceActions';
 import ProjectDetail from '../../Components/ProjectDetail';
 import { saveSortedSkills } from '../../actions/projectDetailAction';
 
