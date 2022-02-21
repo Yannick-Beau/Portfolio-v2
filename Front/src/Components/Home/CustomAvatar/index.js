@@ -1,6 +1,6 @@
 import './CustomAvatar.scss';
 
-import photo from '../../../assets/yannick-home.png';
+import photo from '../../../assets/yannick-home.svg';
 
 function CustomAvatar({ picture }) {
     return (
