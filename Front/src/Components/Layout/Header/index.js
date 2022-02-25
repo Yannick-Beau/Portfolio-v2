@@ -57,7 +57,7 @@ function Header({ navIsShowClassName, setNavIsShowClassName }) {
                                   activeclassname="active"
                                   exact="true"
                                 >
-                                    <i className="uil uil-scenery nav__icon"></i> Projet
+                                    <i className="uil uil-scenery nav__icon"></i> Projets
                                 </NavLink>
                             </li>
                             <li className="nav__item">                               

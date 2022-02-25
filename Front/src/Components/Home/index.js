@@ -45,7 +45,7 @@ function Home({
                       {!isLoading
                         &&
                         <>
-                          <h1 className="home__title">Bienvenu sur le portfolio de {lastname} {firstname}</h1>
+                          <h1 className="home__title">Bienvenue sur le portfolio de {lastname} {firstname}</h1>
                           <h3 className="home__subtitle">{subTitle}</h3>
                           <p className="home__description">{description}</p>
                           
@@ -55,7 +55,7 @@ function Home({
                         to="/contact"
                         className="button button--flex"
                       >
-                        Contacter moi <i className="uil uil-message button__icon"></i>
+                        Contactez moi <i className="uil uil-message button__icon"></i>
                       </Link>
                     </div>
                 </div>

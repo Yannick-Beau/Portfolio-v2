@@ -47,7 +47,7 @@ function Contact({
         pauseOnHover
       />
       <h1 className="section__title">Contact</h1>
-      <span className="section__subtitle">Contacter moi</span>
+      <span className="section__subtitle">Contactez moi</span>
       <div className="contact__container container grid">
           <div>
             <div className="contact__information">

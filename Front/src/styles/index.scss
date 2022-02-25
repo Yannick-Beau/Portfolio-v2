@@ -128,11 +128,15 @@ button{
   margin-right: vars.$m-1-5;
 }
 
+p{
+  line-height: 1.35em;
+}
+
 /* ===== Buttons ===== */
 .button{
   display: inline-block;
   background-color: vars.$primary-color;
-  color: #fff;
+  color: vars.$text-color-dark;
   padding: 1rem;
   border-radius: .5rem;
   font-weight: vars.$font-medium;
